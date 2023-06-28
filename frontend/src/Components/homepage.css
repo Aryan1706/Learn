@@ -1,0 +1,15 @@
+.a{
+    justify-content: center;
+    display: flex;
+    color: rebeccapurple;
+  }
+
+  .b{
+    justify-content: space-evenly;
+    display: flex;
+  }
+  .cardContainer{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+  }
