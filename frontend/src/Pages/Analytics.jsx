@@ -144,7 +144,7 @@ const Analytics = () => {
             </Grid>
             <Grid item xs={4}>
             <Card sx={{ height: 45 + "vh" }}>
-                <CardContent>
+                <CardContent className="margin">
                   <PieChart/>
                 </CardContent>
               </Card>

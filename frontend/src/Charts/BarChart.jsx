@@ -18,7 +18,7 @@ export const options = {
     title: "Company Performance",
     subtitle: "Sales, Expenses, and Profit: 2014-2017",
   },
-  colors : [ "rgb(53,138,148)" , "rgb(37, 11, 165)" ,"#188310"]
+  colors : [ "rgb(53,138,148)" , "rgb(40, 34, 70)" ,"#188310"]
 };
 
 export default function BarChart() {

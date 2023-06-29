@@ -14,7 +14,7 @@ export const options = {
   title: "My Daily Activities",
   pieHole: 0.4,
   is3D: false,
-  colors : [ "rgb(53,138,148)" , "rgb(37, 11, 165)" ,"#188310"]
+  colors : [ "rgb(53,138,148)" , "rgb(37, 11, 165)" ,"rgb(40, 34, 70)" ,"#188310"],
 
 };
 
@@ -22,7 +22,7 @@ export function PieChart() {
   return (
     <Chart
       chartType="PieChart"
-      width="100%"
+      width="117%"
       height="300px"
       data={data}
       options={options}
