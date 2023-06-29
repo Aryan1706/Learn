@@ -9,13 +9,14 @@ import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import "../Dash.css";
 import StorefrontIcon from "@mui/icons-material/Storefront";
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import CreditCardIcon from "@mui/icons-material/CreditCard";
+import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
+import AccordionDash from "../Components/Accordian";
 
 const Home = () => {
   return (
     <div className="bgcolor">
-      <Navbar/>
+      <Navbar />
       <Box height={60} />
       <Box sx={{ display: "flex" }}>
         <Sidenav />
@@ -23,30 +24,56 @@ const Home = () => {
           <Grid container spacing={2}>
             <Grid xs={8}>
               <Stack direction="row" spacing={2}>
-                <Card sx={{ minWidth: 49 + "%", height: 150 }} className="gradient paddingall">
+                <Card
+                  sx={{ minWidth: 49 + "%", height: 150 }}
+                  className="gradient paddingall"
+                >
                   <CardContent>
                     <div className="iconstyleblack">
-                    <CreditCardIcon/>
+                      <CreditCardIcon />
                     </div>
-                    
-                    <Typography gutterBottom variant="h5" component="div" color="white">
+
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      color="white"
+                    >
                       $500.00
                     </Typography>
-                    <Typography gutterBottom variant="body2" component="div" sx={{color:'#ccd1d1'}} >
+                    <Typography
+                      gutterBottom
+                      variant="body2"
+                      component="div"
+                      sx={{ color: "#ccd1d1" }}
+                    >
                       Total Earning
                     </Typography>
                   </CardContent>
                 </Card>
-                <Card sx={{ minWidth: 49 + "%", height: 150 }} className="lightgradient paddingall">
+                <Card
+                  sx={{ minWidth: 49 + "%", height: 150 }}
+                  className="lightgradient paddingall"
+                >
                   <CardContent>
                     <div className="iconstyleblack">
-                    <ShoppingBagIcon/>
+                      <ShoppingBagIcon />
                     </div>
 
-                    <Typography gutterBottom variant="h5" component="div" color="white">
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      color="white"
+                    >
                       $900.00
                     </Typography>
-                    <Typography gutterBottom variant="body2" component="div" sx={{color:'#ccd1d1'}} >
+                    <Typography
+                      gutterBottom
+                      variant="body2"
+                      component="div"
+                      sx={{ color: "#ccd1d1" }}
+                    >
                       Total Orders
                     </Typography>
                   </CardContent>
@@ -55,8 +82,8 @@ const Home = () => {
             </Grid>
             <Grid xs={4}>
               <Stack spacing={2}>
-                <Card sx={{ maxWidth: 345 }} className="lightgradient" >
-                <Stack spacing={2} direction={"row"}> 
+                <Card sx={{ maxWidth: 345 }} className="lightgradient">
+                  <Stack spacing={2} direction={"row"}>
                     <div className="iconstyle">
                       <StorefrontIcon />
                     </div>
@@ -91,9 +118,12 @@ const Home = () => {
               </Card>
             </Grid>
             <Grid xs={4}>
-              <Card sx={{ height: 60 + "vh" , maxWidth: 345}}>
+              <Card sx={{ height: 60 + "vh", maxWidth: 345 }}>
                 <CardContent>
-                  
+                  <span className="pricetitle">Popular Products</span>
+                  <br />
+                  <span className="pricesubtitle">Line-Wise</span>
+                  <AccordionDash />
                 </CardContent>
               </Card>
             </Grid>
