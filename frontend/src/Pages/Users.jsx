@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Sidenav from '../Components/Sidenav';
 import Navbar from '../Components/Navbar';
 
-const About = () => {
+const Users = () => {
   return (
     <>
     <Navbar />
@@ -11,7 +11,7 @@ const About = () => {
     <Box sx={{ display: "flex" }}>
         <Sidenav />
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <h1>About</h1>
+            <h1>Users</h1>
         </Box>
     </Box>
     </>
@@ -19,4 +19,4 @@ const About = () => {
   )
 }
 
-export default About
+export default Users
