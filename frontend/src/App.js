@@ -6,10 +6,11 @@ import Card from './Components/Cards';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import Sidenav from './Components/Sidenav';
 import Home from "./Pages/Home";
-import About from './Pages/About';
 import Settings from "./Pages/Settings";
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css';
+import Analytics from './Pages/Analytics';
+import Products from './Pages/Products';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         <Route path='/signup' element = {<Signup/>}></Route> */}
 
         <Route exact path='/' element= {<Home />}></Route>
-        <Route  path='/about' element= {<About />}></Route>
+        <Route exact path='/products' element= {< Products />}></Route>
+        <Route exact path='/analytics' element= {< Analytics />}></Route>
         <Route exact path='/setting' element= {<Settings />}></Route>
 
       </Routes>
