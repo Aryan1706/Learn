@@ -12,12 +12,15 @@ import Divider from "@mui/material/Divider";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import Stack from "@mui/material/Stack";
-import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
+import AddProduct from "./AddProduct";
+import EditProduct from "./EditProduct";
+import TextField from "@mui/material/TextField";
+import Autocomplete from "@mui/material/Autocomplete";
+import Box from "@mui/material/Box";
 
-export default function ProductList() 
-{
+export default function ProductList() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [items, setItems] = useState([]);
@@ -62,6 +65,8 @@ export default function ProductList()
     fetchData();
   }, []);
 
+
+
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
       <TableContainer sx={{ maxHeight: 440 }}>
@@ -72,47 +77,51 @@ export default function ProductList()
           sx={{ padding: "20px" }}
         >
           Products List
+          <span style={{ float:"right"}}>
+              <AddProduct/>
+          </span>
         </Typography>
         <Divider />
+        
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
-                <TableCell
-                  style={{ minWidth: 100, fontWeight: "bold" }}
-                  align="center"
-                >
-                  Name
-                </TableCell>
-                <TableCell
-                  style={{ minWidth: 100, fontWeight: "bold" }}
-                  align="center"
-                >
-                  Pack Size
-                </TableCell>
-                <TableCell
-                  style={{ minWidth: 100, fontWeight: "bold" }}
-                  align="center"
-                >
-                  Price
-                </TableCell>
-                <TableCell
-                  style={{ minWidth: 100, fontWeight: "bold" }}
-                  align="center"
-                >
-                  D.P.
-                </TableCell>
-                <TableCell
-                  style={{ minWidth: 100, fontWeight: "bold" }}
-                  align="center"
-                >
-                  B.V.
-                </TableCell>
-                <TableCell
-                  style={{ minWidth: 100, fontWeight: "bold" }}
-                  align="left"
-                >
-                  Action
-                </TableCell>
+              <TableCell
+                style={{ minWidth: 100, fontWeight: "bold" }}
+                align="center"
+              >
+                Name
+              </TableCell>
+              <TableCell
+                style={{ minWidth: 100, fontWeight: "bold" }}
+                align="center"
+              >
+                Pack Size
+              </TableCell>
+              <TableCell
+                style={{ minWidth: 100, fontWeight: "bold" }}
+                align="center"
+              >
+                Price
+              </TableCell>
+              <TableCell
+                style={{ minWidth: 100, fontWeight: "bold" }}
+                align="center"
+              >
+                D.P.
+              </TableCell>
+              <TableCell
+                style={{ minWidth: 100, fontWeight: "bold" }}
+                align="center"
+              >
+                B.V.
+              </TableCell>
+              <TableCell
+                style={{ minWidth: 100, fontWeight: "bold" }}
+                align="left"
+              >
+                Action
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -121,44 +130,36 @@ export default function ProductList()
               .map((row) => {
                 return (
                   <TableRow hover role="checkbox" tabIndex={-1}>
-                        <TableCell key={row.id} align="center">
-                          {row.name}
-                        </TableCell>
-                        <TableCell key={row.id} align="center">
-                          {row.username}
-                        </TableCell>
-                        <TableCell key={row.id} align="center">
-                          {row.email}
-                        </TableCell>
-                        <TableCell key={row.id} align="center">
-                          {row.address.city}
-                        </TableCell>
-                        <TableCell key={row.id} align="center">
-                          {row.phone}
-                        </TableCell>
-                        <TableCell align="center">
-                          <Stack spacing={2} direction="row">
-                            <EditIcon
-                              style={{
-                                fontSize: "20px",
-                                color: "blue",
-                                cursor: "pointer",
-                              }}
-                              className="cursor-pointer"
-                              // onClick={() => editUser(row.id)}
-                            />
-                            <DeleteIcon
-                              style={{
-                                fontSize: "20px",
-                                color: "darkred",
-                                cursor: "pointer",
-                              }}
-                              onClick={() => {
-                                deleteUser(row.id);
-                              }}
-                            />
-                          </Stack>
-                        </TableCell>
+                    <TableCell key={row.id} align="center">
+                      {row.name}
+                    </TableCell>
+                    <TableCell key={row.id} align="center">
+                      {row.username}
+                    </TableCell>
+                    <TableCell key={row.id} align="center">
+                      {row.email}
+                    </TableCell>
+                    <TableCell key={row.id} align="center">
+                      {row.address.city}
+                    </TableCell>
+                    <TableCell key={row.id} align="center">
+                      {row.phone}
+                    </TableCell>
+                    <TableCell align="center">
+                      <Stack spacing={2} direction="row">
+                        <EditProduct row='row'/>
+                        <DeleteIcon
+                          style={{
+                            fontSize: "20px",
+                            color: "darkred",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => {
+                            deleteUser(row.id);
+                          }}
+                        />
+                      </Stack>
+                    </TableCell>
                   </TableRow>
                 );
               })}
@@ -170,7 +171,7 @@ export default function ProductList()
         component="div"
         rowsPerPage={rowsPerPage}
         page={page}
-        count={ items.length }
+        count={items.length}
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
